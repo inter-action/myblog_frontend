@@ -1,0 +1,28 @@
+html {
+}
+
+// copied from apple.com
+body {
+  font-size: 17px;
+  line-height: 1.47059;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  background-color: #fff;
+  font-style: normal;
+}
+
+ul,
+li {
+  padding: 0;
+  list-style: none;
+}
+
+#page-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  > div:nth-child(2) {
+    flex: 1;
+  }
+}

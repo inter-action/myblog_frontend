@@ -1,0 +1,10 @@
+$color_deep_blue: #13315c;
+$color_light_blue: #b1ede8;
+$color_deep_yellow: #f4ac45;
+$main_content_width: 1024px - 360px;
+
+$design_width: 1024px;
+
+@function toPercent($some_number) {
+  @return percentage($some_number/$design_width);
+}

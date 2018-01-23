@@ -1,0 +1,67 @@
+{
+  "presets": [
+    "stage-2",
+    "react",
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "last 4 Chrome versions"
+            // "Chrome >= 60",
+            // "Safari >= 10.1",
+            // "iOS >= 10.3",
+            // "Firefox >= 54",
+            // "Edge >= 15"
+          ]
+        },
+        "modules": false,
+        "useBuiltIns": true
+      }
+    ]
+  ],
+  "env": {
+    "development": { // this is default
+      "plugins": [
+        "react-hot-loader/babel",
+        "transform-decorators-legacy", // should always be the first plugin!
+        "transform-async-to-generator",
+        [
+          "transform-runtime",
+          {
+            "polyfill": false,
+            "regenerator": true
+          }
+        ]
+      ]
+    },
+    "production": {
+      "plugins": [
+        "transform-decorators-legacy", // should always be the first plugin!
+        "transform-async-to-generator",
+        [
+          "transform-runtime",
+          {
+            "polyfill": false,
+            "regenerator": true
+          }
+        ]
+      ]
+    },
+    "test": {
+      "presets": [
+        "stage-2",
+        "react",
+        [
+          "env",
+          {
+            "targets": {
+              "node": "current"
+            },
+            "useBuiltIns": true
+          }
+        ]
+      ]
+    }
+  }
+}

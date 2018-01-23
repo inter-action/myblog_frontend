@@ -1,0 +1,31 @@
+@import '../../styles/common';
+
+.page-article {
+  .main-content {
+    max-width: $main_content_width;
+    margin: 0 auto;
+    margin-top: 46px;
+    font-size: 14px;
+
+    .article-header {
+      .article-title {
+        font-size: 24px;
+        text-align: center;
+      }
+
+      .article-updatetime {
+        text-align: right;
+      }
+    }
+
+    .article-content {
+      img {
+        max-width: 100% !important;
+      }
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    padding: 0 5%;
+  }
+}
