@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { inject, observer } from 'mobx-react'
-
-import { toDateString } from '@/utils'
+import { observable } from 'mobx';
+import * as cls from 'classnames'
+import { toDateString, request } from '@/utils'
 
 import './styles.scss'
 
@@ -17,23 +18,21 @@ import './styles.scss'
 })
 @observer
 export class Home extends Component {
+  @observable meta
   componentWillMount() {
     this.props.loadArticles()
+    
+    request.get("/api/meta").then(resp=>{
+      this.meta = resp 
+    })
   }
 
-  /*
-  [
-  {
-    "title": "you dont know js",
-    "created": "2018-01-17T14:20:06Z",
-    "updated": "2018-01-18T21:01:37+08:00",
-    "tags": null,
-    "slug": "you-dont-know-js"
-  }
-]
-  */
   render() {
+    let {meta} = this
+    if (!meta) return null
+
     let { articles } = this.props
+
     return (
       <div className="page-home">
         <div className="row">
@@ -41,10 +40,13 @@ export class Home extends Component {
             <div className="label">关于我</div>
           </div>
           <div className="content">
-            Hella narwhal Cosby sweater McSweeney's, salvia kitsch before they sold out High Life.
-            Umami tattooed sriracha meggings pickled Marfa Blue Bottle High Life next level four
-            loko PBR. Keytar pickled next level keffiyeh drinking vinegar street art. Art party
-            vinyl Austin, retro whatever keytar mixtape.
+            <p>
+              {meta.me}
+            </p>
+
+            <p className="icons">
+              <a href="https://github.com/inter-action" className="fa fa-github" aria-hidden="true"></a>
+            </p>
           </div>
         </div>
         <div className="row">
@@ -62,13 +64,11 @@ export class Home extends Component {
           </div>
         </div>
         <div className="gallery">
-          <img className="large" src="http://via.placeholder.com/255x255" />
-          <img src="http://via.placeholder.com/125x125" alt="" />
-          <img src="http://via.placeholder.com/125x125" alt="" />
-          <img src="http://via.placeholder.com/125x125" alt="" />
-          <img src="http://via.placeholder.com/125x125" alt="" />
-          <img src="http://via.placeholder.com/125x125" alt="" />
-          <img src="http://via.placeholder.com/125x125" alt="" />
+          {
+            meta.images.map((e, i)=>{
+              return <img key={i} className={cls({'large': i == 0})} src={e} />
+            })
+          }
         </div>
         <div>
           <img src="" alt="" />
