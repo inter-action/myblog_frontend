@@ -10,8 +10,6 @@ import request from '@/utils/request'
 import './style.scss'
 import { unifyArticle, toDateString } from '@/utils'
 
-//todo:
-function redirectTo404() {}
 
 @observer
 export class Article extends Component {
@@ -22,8 +20,8 @@ export class Article extends Component {
   }
 
   componentWillMount() {
-    let { match: { params: { slug } } } = this.props
-    if (!slug) redirectTo404()
+    let { match: { params: { slug } }, history} = this.props
+    if (!slug) history.push('/404')
     else {
       request.get(`/api/articles/${slug}`).then(resp => {
         unifyArticle(resp.article)
