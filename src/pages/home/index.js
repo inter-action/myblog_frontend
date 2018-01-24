@@ -35,7 +35,7 @@ export class Home extends Component {
 
     return (
       <div className="page-home">
-        <div className="row">
+        <div className="row about">
           <div className="label-wrapper">
             <div className="label">关于我</div>
           </div>
@@ -69,6 +69,14 @@ export class Home extends Component {
               return <img key={i} className={cls({'large': i == 0})} src={e} />
             })
           }
+        </div>
+        <div className="row">
+          <div className="label-wrapper">
+            <div className="label">技能</div>
+          </div>
+          <div className="content">
+            {meta.skills.map((e, i) => <p key={i}>{e}</p>)}
+          </div>
         </div>
         <div>
           <img src="" alt="" />
