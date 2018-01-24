@@ -1,3 +1,4 @@
+let path = require('path')
 let webpack = require('webpack')
 let merge = require('webpack-merge')
 
@@ -26,7 +27,7 @@ module.exports = merge(config, {
   },
   plugins: [new webpack.NamedModulesPlugin(), new webpack.HotModuleReplacementPlugin()],
   devServer: {
-    contentBase: './build',
+    contentBase: [path.join(__dirname, 'topublic'), path.join(__dirname, 'build')],
     open: true,
 
     historyApiFallback: true,
@@ -37,6 +38,7 @@ module.exports = merge(config, {
 
     host: process.env.HOST,
     port: process.env.PORT,
+
 
     proxy: [
       {

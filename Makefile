@@ -16,12 +16,14 @@ clean:
 	rm -rf build/*
 	mkdir -p build
 
+topublic:
+	cp -rf topublic build
 
 dev:
 	webpack-dev-server --config webpack.config.dev.js
 
 # BABEL_ENV=production, shall babel_env missing, node_env should be refered.
-prod: clean
+prod: clean topublic
 	NODE_ENV=production webpack --config webpack.config.prod.js
 	
 # https://www.npmjs.com/package/http-server
