@@ -3,7 +3,7 @@ import axios from 'axios'
 let baseURL = undefined
 let instance = axios.create({
   baseURL,
-  timeout: 1000
+  timeout: 5000
 })
 
 // Add a request interceptor

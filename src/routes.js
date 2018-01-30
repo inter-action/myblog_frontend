@@ -1,10 +1,10 @@
 import React from 'react'
-import { BrowserRouter, HashRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { Home, Articles, Article, NotFound } from './pages'
 import { Header, Footer } from '@/components'
 
 const Router = () => (
-  <HashRouter>
+  <BrowserRouter>
     <div id="page-root">
       <Switch>
         <Route exact path="/" component={embed(Home)} />
@@ -13,7 +13,7 @@ const Router = () => (
         <Route component={NotFound}/>
       </Switch>
     </div>
-  </HashRouter>
+  </BrowserRouter>
 )
 
 function embed(Page){
