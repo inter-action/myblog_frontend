@@ -1,0 +1,5 @@
+
+
+* 2018-01-30 23:37:12
+  * 更新nginx配置
+    * 添加 proxy header, https://github.com/Mechazawa/nginx-config/blob/master/nginx/proxy_params

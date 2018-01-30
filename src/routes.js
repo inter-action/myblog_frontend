@@ -10,6 +10,7 @@ const Router = () => (
         <Route exact path="/" component={embed(Home)} />
         <Route exact path="/articles" component={embed(Articles)} />
         <Route path="/articles/:slug" component={embed(Article)} />
+        <Route path="/404" component={NotFound} />
         <Route component={NotFound}/>
       </Switch>
     </div>

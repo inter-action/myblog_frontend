@@ -8,6 +8,7 @@
 
   .com-header__wrapper {
     width: toPercent($main_content_width + 200px);
+    max-width: 1044px;
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -38,14 +39,15 @@
       .navi-item {
         color: $color_light_blue;
         text-decoration: none;
+        margin-right: toPercent(25px);
 
         &.active,
         &:hover {
           color: $color_deep_yellow;
         }
 
-        &:first-child {
-          margin-right: toPercent(25px);
+        &:last-child {
+          margin-right: 0;
         }
       }
     }
