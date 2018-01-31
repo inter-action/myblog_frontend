@@ -50,8 +50,9 @@ const config = {
       }
     }),
     new HtmlWebpackPlugin({
-      title: 'html title goes here',
-      template: 'index.ejs'
+      title: 'myblog',
+      template: 'index.ejs',
+      gTrackId: 'UA-113285134-1'
     })
   ]
 }

@@ -12,5 +12,17 @@
   </head>
   <body>
     <div class="app"></div>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<%= htmlWebpackPlugin.options.gTrackId %>"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '<%= htmlWebpackPlugin.options.gTrackId %>');
+      
+    </script>
+    
   </body>
 </html>
