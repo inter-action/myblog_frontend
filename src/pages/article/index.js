@@ -4,7 +4,7 @@ import * as hljs from 'highlight.js'
 import { observable } from 'mobx'
 import { observer } from 'mobx-react'
 
-import 'highlight.js/styles/github.css'
+import 'highlight.js/styles/solarized-light.css'
 
 import request from '@/utils/request'
 import './style.scss'
@@ -30,7 +30,7 @@ export class Article extends Component {
     }
   }
 
-  componentDidMount() {
+  componentDidUpdate() {
     Array.from(document.querySelectorAll('pre code')).map(block => {
       hljs.highlightBlock(block)
     })

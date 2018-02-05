@@ -19,6 +19,12 @@
     }
 
     .article-content {
+      p > code {
+        background-color: #f5f5f5;
+        color: #b15502;
+      }
+
+
       img {
         max-width: 100% !important;
       }
