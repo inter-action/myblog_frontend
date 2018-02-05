@@ -81,6 +81,6 @@ module.exports = merge(config, {
       globPatterns: ['**/*.{png,jpeg,jpg,js,css,svg,woff2}'],
       swDest: path.join(dist, 'sw.js'),
     }),
-    new BundleAnalyzerPlugin()
+    // new BundleAnalyzerPlugin()
   ]
 })
