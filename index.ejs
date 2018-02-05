@@ -15,7 +15,7 @@
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=<%= htmlWebpackPlugin.options.gTrackId %>"></script>
-    <script>
+    <script type="text/javascript">
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -24,5 +24,16 @@
       
     </script>
     
+    <script type="text/javascript">
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').then(registration => {
+            console.info('SW registered: ', registration);
+          }).catch(registrationError => {
+            console.warn('SW registration failed: ', registrationError);
+          });
+        });
+      }
+    </script>
   </body>
 </html>

@@ -1,4 +1,9 @@
+* 2018-02-05
+  * 启用 service worker
 
+* 2018-02-02 21:07:39
+  * 用 let's encript 启用了 https
+  
 * 2018-02-01 00:01:18
   * add google analytics tracking
   * 用自签证书的方式开启了 ssl 
