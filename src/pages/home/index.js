@@ -40,7 +40,7 @@ export class Home extends Component {
             <div className="label">关于我</div>
           </div>
           <div className="content">
-            <p>
+            <p className="self-intro">
               {meta.me}
             </p>
 

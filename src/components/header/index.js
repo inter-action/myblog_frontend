@@ -22,7 +22,7 @@ export class Header extends Component {
             <NavLink to="/articles" className="navi-item">
               文章列表
             </NavLink>
-            <a className="navi-item" href="/update_log.txt">
+            <a className="navi-item" href="/update_log.txt" target="_blank">
               更新日志
             </a>
           </div>
