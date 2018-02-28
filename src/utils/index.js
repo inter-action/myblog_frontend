@@ -6,12 +6,12 @@ import request from './request'
 export { dom, request }
 
 export function toDateString(luxonDate) {
-  return luxonDate.toLocaleString(DateTime.DATE_FULL)
+  return luxonDate.toFormat('DD, HH:mm')
 }
 
 export function unifyArticle(serverModel) {
-  serverModel.created = DateTime.fromISO(serverModel.created)
-  serverModel.updated = DateTime.fromISO(serverModel.updated)
+  serverModel.created = DateTime.fromMillis(+serverModel.created)
+  serverModel.updated = DateTime.fromMillis(+serverModel.updated)
   return serverModel
 }
 
