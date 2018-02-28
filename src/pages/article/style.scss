@@ -3,11 +3,12 @@
 .page-article {
   .main-content {
     max-width: $main_content_width;
-    margin: 0 auto;
-    margin-top: 46px;
+    margin: 46px auto;
     font-size: 14px;
 
     .article-header {
+      margin-bottom: 3em;
+
       .article-title {
         font-size: 24px;
         text-align: center;
@@ -15,6 +16,8 @@
 
       .article-updatetime {
         text-align: right;
+        margin-top: 1em;
+        text-decoration: underline;
       }
     }
 

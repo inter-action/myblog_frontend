@@ -46,7 +46,7 @@ export class Article extends Component {
           <div className="article-header">
             <div className="article-title">{article.title}</div>
             <div className="article-updatetime">
-              <i>updated at</i> {toDateString(article.updated)}
+              <span>更于 </span> {toDateString(article.updated)}
             </div>
           </div>
           <ReactMarkDown

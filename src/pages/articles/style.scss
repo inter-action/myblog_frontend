@@ -13,7 +13,7 @@
       height: 100%;
       position: absolute;
       background-color: #d8ac0b;
-      left: 125px;
+      left: 9.5em;
       box-shadow: 3px 2px 0px 0px #0960ff;
     }
   }
@@ -29,7 +29,12 @@
   }
 
   .time {
-    margin-right: toPercent(80px);
+    text-align: right;
+    min-width: 9em;
+  }
+  .name {
+    padding-left: toPercent(80px);
+    text-align: left;
   }
 
   .row {
@@ -59,6 +64,18 @@
       display: flex;
       margin-bottom: 2em;
       flex-direction: column;
+
+      .name {
+        padding-left: 0;
+      }
+      .time {
+        text-align: left;
+        background-color: #000000;
+        color: #afafaf;
+        width: fit-content;
+        padding: 0 3px;
+        border-radius: 2px;
+      }
 
       .time {
         margin-right: 1em;
