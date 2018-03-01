@@ -6,8 +6,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractText = new ExtractTextPlugin('[name].[chunkhash].css')
 const config = require('./webpack.config')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 /* eslint-disable */
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 /* eslint-enable */
 const workboxPlugin = require('workbox-webpack-plugin');
@@ -53,13 +53,13 @@ module.exports = merge(config, {
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor', 'manifest'],
     }),
-    // new UglifyJSPlugin({
-    //   parallel: true,
-    //   compress: {
-    //     warnings: false,
-    //     screw_ie8: true
-    //   },
-    // }),
+    new UglifyJsPlugin({
+      parallel: true,
+      uglifyOptions: {
+        ecma: 8,
+        compress: true
+      }
+    }),
     // Make sure that the plugin is after any plugins that add images
     new ImageminPlugin({
       jpegtran: {
