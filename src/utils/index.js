@@ -10,8 +10,7 @@ export function toDateString(luxonDate) {
 }
 
 export function unifyArticle(serverModel) {
-  serverModel.created = DateTime.fromMillis(+serverModel.created)
-  serverModel.updated = DateTime.fromMillis(+serverModel.updated)
+  serverModel.created = DateTime.fromISO(serverModel.created)
+  serverModel.updated = DateTime.fromISO(serverModel.updated)
   return serverModel
 }
-
